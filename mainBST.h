@@ -1,6 +1,6 @@
 
 
-class BST{
+class tree{
     public:
         virtual bool isEmpty() = 0;
         virtual bool add(int key, int value) = 0;
