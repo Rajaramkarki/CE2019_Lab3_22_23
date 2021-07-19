@@ -82,6 +82,16 @@ bool linkedtree::addBST(Node *newNode)
    return true ;
 }
 
+bool linkedtree::addBST(int Key)
+{
+    Node *newNode;
+ 
+    newNode = new Node();
+    newNode->Key = Key;
+    newNode->left = newNode->right = NULL;
+
+    return(addBST(newNode));
+}
 
 bool linkedtree::removeBST(int Key)
 {

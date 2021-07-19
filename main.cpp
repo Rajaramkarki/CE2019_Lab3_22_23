@@ -10,35 +10,18 @@ int main()
     theTree = new linkedtree();
 
     cout <<"adding 8,4,12,2,6,19 into the tree:"<<endl;
-    newNode = new Node();
-    newNode->Key = 8;
-    newNode->left = newNode->right = NULL;
-    theTree->addBST(newNode);
+    
+    theTree->addBST(8);
 
-    newNode = new Node();
-    newNode->Key = 4;
-    newNode->left = newNode->right = NULL;
-    theTree->addBST(newNode);
+    theTree->addBST(4);
 
-    newNode = new Node();
-    newNode->Key = 12;
-    newNode->left = newNode->right = NULL;
-    theTree->addBST(newNode);
+    theTree->addBST(12);
 
-    newNode = new Node();
-    newNode->Key = 2;
-    newNode->left = newNode->right = NULL;
-    theTree->addBST(newNode);
+    theTree->addBST(2);
 
-    newNode = new Node();
-    newNode->Key = 6;
-    newNode->left = newNode->right = NULL;
-    theTree->addBST(newNode);
+    theTree->addBST(6);
 
-    newNode = new Node();
-    newNode->Key = 19;
-    newNode->left = newNode->right = NULL;
-    theTree->addBST(newNode);
+    theTree->addBST(19);
 
     cout <<"All nodes added to the tree\n"<<endl;
 
@@ -69,7 +52,7 @@ cout<<"\n";
     cout<<"\n";
 
 //delete function
-    cout <<"\nDelete function"<<endl;
+    cout <<"Delete function"<<endl;
     cout<<"deleting 4 from the tree:"<<endl;
     theTree->removeBST(4);    
     theTree->inorder();

@@ -26,6 +26,7 @@ class linkedtree
         bool isEmpty();
         Node* searchBST(int Key);
         bool addBST(Node *newNode);
+        bool addBST(int key);
         bool removeBST(int Key);
         void inorder();   
 };
