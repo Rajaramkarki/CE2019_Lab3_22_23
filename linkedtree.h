@@ -1,14 +1,33 @@
-#include "mainBST.h"
+#pragma once
 
-class Data{
-    int key;
-    int data;
+#include <iostream>
+using namespace std;
+
+
+struct Node
+{
+    int Key;
+
+    Node *left;
+    Node *right;
 };
 
-class Node{
-    Data data;
+class linkedtree
+{
+    private:
+        Node *root;
 
-    Node* leftchild;
-    Node* rightchild;
+    public:
+        linkedtree();
+        ~linkedtree();
+
+        bool isEmpty();
+        Node* searchBST(int Key);
+        bool addBST(Node *newNode);
+        bool removeBST(int Key);
+        void inorder();
+    private:
+        Node *DupNode(Node * T);
+        void PrintAll(Node *T);
 };
 
