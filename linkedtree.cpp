@@ -22,15 +22,15 @@ bool linkedtree::isEmpty()
 }
 
 
-Node *linkedtree::DupNode(Node * T)
+Node *linkedtree::show(Node * node)
 {
-    Node *dupNode;
+    Node *dNode;
 
-    dupNode = new Node();
-    *dupNode = *T;    
-    dupNode->left = NULL;   
-    dupNode->right = NULL;
-    return dupNode;
+    dNode = new Node();
+    *dNode = *node;    
+    dNode->left = NULL;   
+    dNode->right = NULL;
+    return dNode;
 }
 
 
@@ -49,7 +49,7 @@ Node *linkedtree::searchBST(int Key)
     if(temp == NULL) 
         return temp;   
     else
-        return(DupNode(temp));    
+        return(show(temp));    
 }
 
 
@@ -93,7 +93,6 @@ bool linkedtree::removeBST(int Key)
     temp = root;
     back = NULL;
 
-    
     while((temp != NULL) && (Key != temp->Key))
     {
         back = temp;
@@ -105,6 +104,7 @@ bool linkedtree::removeBST(int Key)
 
     if(temp == NULL) 
     {
+        cout<<"The number doesn't exist in the tree."<<endl;   
         return false;
     }
     else
@@ -121,7 +121,6 @@ bool linkedtree::removeBST(int Key)
         }
     }
 
-   
     if(dltKey->right == NULL)
     {
         if(prev == NULL)      
@@ -156,13 +155,13 @@ bool linkedtree::removeBST(int Key)
                     prev->left = dltKey->right;
                 else
                     prev->right = dltKey->right;
+
                 delete dltKey;
                 return true;
             }
         }
         else  
-        {
-                          
+        {          
             temp = dltKey->left;
             back = dltKey;
             while(temp->right != NULL)
@@ -172,7 +171,6 @@ bool linkedtree::removeBST(int Key)
             }
             
             dltKey->Key = temp->Key;
-
           
             if(back == dltKey)
                 back->left = temp->left;
@@ -185,13 +183,13 @@ bool linkedtree::removeBST(int Key)
 }
 
 
-void linkedtree::PrintAll(Node *T)
+void linkedtree::traverse(Node *node)
 {
-    if(T != NULL)
+    if(node != NULL)
     {
-        PrintAll(T->left);
-        cout<< T->Key <<"\n";
-        PrintAll(T->right);
+        traverse(node->left);
+        cout<< node->Key <<"  ";
+        traverse(node->right);
     }
 }
 
@@ -199,5 +197,5 @@ void linkedtree::PrintAll(Node *T)
 void linkedtree::inorder()
 {
     cout<<"The inorder traversal of the tree is: "<<endl;
-    PrintAll(root);
+    traverse(root);
 }

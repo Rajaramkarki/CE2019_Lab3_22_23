@@ -7,10 +7,9 @@ int main()
 {
     linkedtree* theTree;
     Node* newNode;
-    
     theTree = new linkedtree();
 
-    cout <<"adding 8,4,12,2,6,19";
+    cout <<"adding 8,4,12,2,6,19 into the tree:"<<endl;
     newNode = new Node();
     newNode->Key = 8;
     newNode->left = newNode->right = NULL;
@@ -41,14 +40,14 @@ int main()
     newNode->left = newNode->right = NULL;
     theTree->addBST(newNode);
 
-    cout <<"All nodes addBSTed"<<endl;
+    cout <<"All nodes added to the tree\n"<<endl;
 
     theTree->inorder();
 
 cout<<"\n";
 
 //Search Function
-    cout <<"Search function\n";
+    cout <<"\nSearch function"<<endl;
     newNode = theTree->searchBST(13);
     if(newNode != NULL)
     {
@@ -70,28 +69,28 @@ cout<<"\n";
     cout<<"\n";
 
 //delete function
-    cout <<"Delete function"<<endl;
+    cout <<"\nDelete function"<<endl;
     cout<<"deleting 4 from the tree:"<<endl;
     theTree->removeBST(4);    
     theTree->inorder();
     cout<<"\n";
 
-    cout<<"deleting 8 from the tree:"<<endl;
+    cout<<"\ndeleting 8 from the tree:"<<endl;
     theTree->removeBST(8);    
     theTree->inorder();
     cout<<"\n";
 
-    cout<<"deleting 6 from the tree:"<<endl;
+    cout<<"\ndeleting 6 from the tree:"<<endl;
     theTree->removeBST(6);    
     theTree->inorder();
     cout<<"\n";
 
-    cout<<"deleting 12 from the tree:"<<endl;
+    cout<<"\nbdeleting 12 from the tree:"<<endl;
     theTree->removeBST(12);    
     theTree->inorder();
     cout<<"\n";
 
-    cout<<"deleting 22 from the tree:"<<endl;
+    cout<<"\ndeleting 22 from the tree:"<<endl;
     theTree->removeBST(22);    
     theTree->inorder();
     cout<<"\n";

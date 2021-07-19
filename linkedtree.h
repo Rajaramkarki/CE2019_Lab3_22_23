@@ -1,8 +1,7 @@
 #pragma once
-
 #include <iostream>
-using namespace std;
 
+using namespace std;
 
 struct Node
 {
@@ -15,7 +14,10 @@ struct Node
 class linkedtree
 {
     private:
-        Node *root;
+        Node *root; 
+        
+        Node* show(Node * node);
+        void traverse(Node *node);
 
     public:
         linkedtree();
@@ -25,9 +27,6 @@ class linkedtree
         Node* searchBST(int Key);
         bool addBST(Node *newNode);
         bool removeBST(int Key);
-        void inorder();
-    private:
-        Node *DupNode(Node * T);
-        void PrintAll(Node *T);
+        void inorder();   
 };
 
